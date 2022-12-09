@@ -1,0 +1,93 @@
+{
+    "TvShows": [
+        {
+            "id": 1,
+            "title": "WandaVision",
+            "type": "TV Show"
+        },
+        {
+            "id": 2,
+            "title": "The Falcon and The Winter Soldier",
+            "type": "TV Show"
+        },
+        {
+            "id": 3,
+            "title": "Loki",
+            "type": "TV Show"
+        },
+        {
+            "id": 4,
+            "title": "What If...?",
+            "type": "TV Show"
+        },
+        {
+            "id": 5,
+            "title": "Hawkeye",
+            "type": "TV Show"
+        },
+        {
+            "id": 6,
+            "title": "Moon Knight",
+            "type": "TV Show"
+        },
+        {
+            "id": 7,
+            "title": "Ms. Marvel",
+            "type": "TV Show"
+        },
+        {
+            "id": 8,
+            "title": "Groot's First Steps"
+        },
+        {
+            "id": 9,
+            "title": "The Little Guy"
+        },
+        {
+            "id": 10,
+            "title": "Groot Takes a Bath"
+        },
+        {
+            "id": 11,
+            "title": "Groot's Pursuit"
+        },
+        {
+            "id": 12,
+            "title": "Magnum Opus"
+        },
+        {
+            "id": 13,
+            "title": "She-Hulk: Attorney at Law",
+            "type": "TV Show"
+        },
+        {
+            "id": 14,
+            "title": "The Guardians of the Galaxy Holiday Special"
+        },
+        {
+            "id": 15,
+            "title": "Secret Invasion",
+            "type": "TV Show"
+        },
+        {
+            "id": 16,
+            "title": "Echo",
+            "type": "TV Show"
+        },
+        {
+            "id": 17,
+            "title": "Ironheart",
+            "type": "TV Show"
+        },
+        {
+            "id": 18,
+            "title": "Agatha: Coven of Chaos",
+            "type": "TV Show"
+        },
+        {
+            "id": 19,
+            "title": "Daredevil: Born Again",
+            "type": "TV Show"
+        }
+    ]
+}

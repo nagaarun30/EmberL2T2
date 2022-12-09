@@ -1,0 +1,494 @@
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+@keyframes loading {
+  0% {
+    // Skeleton Loading
+    background-color: #f6f7f8;
+  }
+  50% {
+    // Skeleton Loading
+    background-color: #e1e2e3;
+  }
+  100% {
+    // Skeleton Loading
+    background-color: #f6f7f8;
+  }
+}
+
+.bg {
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  transition: all 0.5s ease;
+}
+
+.imgch {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.youtube_hide {
+  display: none;
+}
+
+#imagech {
+  transition: all 1s ease;
+}
+
+.close_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+.youtube_show {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 1;
+
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+.header1 {
+  box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+}
+
+main {
+  display: block;
+  margin-top: 8rem;
+}
+
+.header {
+  background-color: white;
+}
+
+.header_logo {
+  padding: 26px 0;
+  text-align: center;
+}
+
+.header_logo a {
+  display: inline-block;
+  color: #000;
+  font-size: 27px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.header_logo a span {
+  color: #ff0000;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.header_menu {
+  padding: 30px 0 27px;
+  text-align: center;
+}
+
+.header_menu ul li {
+  position: relative;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.header_menu ul li a {
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+  display: block;
+  padding: 2px 0;
+  position: relative;
+}
+
+.header_menu ul li a:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff7200;
+  transition: all 0.5s;
+  transform: scale(0);
+}
+
+.header_menu ul li:hover a:after {
+  transform: scale(1);
+}
+
+.header_menu ul li.active a:after {
+  transform: scale(1);
+}
+
+.header_menu ul li:last-child {
+  margin-right: 0;
+}
+
+.header_right {
+  text-align: center;
+  padding: 30px 0 27px;
+}
+
+.header_right .header_right_auth {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.header_right .header_right_auth a {
+  font-size: 17px;
+  color: #666666;
+  position: relative;
+  margin-right: 13px;
+}
+
+.header_right .header_right_auth a:last-child {
+  margin-right: 0;
+}
+
+.header_right .header_right_auth a:after {
+  position: absolute;
+  right: -12px;
+  top: 2px;
+  content: '/';
+  font-size: 16px;
+}
+
+.header_right .header_right_auth a:last-child:after {
+  display: none;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.card .card_title {
+  font-size: 27px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.card .card_text {
+  font-size: 17px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.card .card_text a {
+  color: #ff7200;
+}
+
+.card .card_text a:hover {
+  color: #ff0000;
+}
+
+.card .card_text a:focus {
+  color: #ff0000;
+}
+
+.card .card_text a:active {
+  color: #ff0000;
+}
+
+.card .card_text a:visited {
+  color: #ff7200;
+}
+
+.card .card_img {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card .card_img img {
+  max-width: 25%;
+}
+
+.card .card_btn {
+  text-align: center;
+}
+
+.card .card_btn a {
+  display: inline-block;
+  background-color: #ff7200;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.card .card_btn a:hover {
+  background-color: #ff0000;
+}
+
+.card .card_btn a:focus {
+  background-color: #ff0000;
+}
+
+.card .card_body {
+  padding: 30px;
+  background-color: #f5f5f5;
+}
+
+.card .card_body .card_body_title {
+  font-size: 27px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.card .card_body .card_body_text {
+  font-size: 17px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.show {}
+
+.hide {
+  display: none;
+}
+
+.upload {
+  width: 520px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.upload h1,
+.upload p {
+  margin: 0;
+}
+
+.upload .upload-field {
+  width: 75%;
+  height: 100%;
+  background-image: linear-gradient(15deg, #ad4444, #b65959);
+  border-radius: 5px;
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #be6b6b;
+  box-shadow: 0px 10px 40px #ad4444;
+  pointer-events: hover;
+  cursor: pointer;
+  -webkit-animation: fadeInUp 1s;
+  animation: fadeInUp 1s;
+}
+
+.upload .upload-field .icon-field {
+  width: 60%;
+  height: 65%;
+  padding: 10px;
+  border: 4px dashed #be6b6b;
+  text-align: center;
+  text-transform: uppercase;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s linear;
+}
+
+.upload .upload-field .icon-field:hover {
+  transform: scale(1.05);
+}
+
+.upload .upload-field .icon-field span {
+  font-size: 90px;
+  transform: rotateY(180deg) translateX(20px);
+}
+
+.upload .upload-field .icon-field p {
+  font-weight: 500;
+}
+
+.upload .upload-status {
+  position: absolute;
+  display: block;
+  z-index: 5;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 60%;
+  height: 80%;
+  padding: 25px 45px;
+  background-color: #fff;
+  box-shadow: 0px 10px 75px rgba(0, 0, 0, 0.5);
+}
+
+.upload .upload-status h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  margin: 15px 0px;
+  color: #2c3e50;
+}
+
+.upload .upload-status .file {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  margin: 8px 0px;
+}
+
+.upload .upload-status .file .file-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.upload .upload-status .file .file-description .file-name {
+  color: #6e6e6e;
+  font-weight: 500;
+}
+
+.upload .upload-status .file .file-description .file-size {
+  font-size: 13px;
+  text-transform: lowercase;
+  color: #93e7b6;
+}
+
+.upload .upload-status .file .file-status {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+}
+
+.upload .upload-status .file .file-status .status-field {
+  background-color: #e9e9e9;
+  height: 5px;
+  width: 100%;
+  border-radius: 2.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload .upload-status .file .file-status .status-field .status-line {
+  transition: background-image 0.2s linear;
+  max-width: 100%;
+  min-width: 1%;
+  height: 100%;
+  background-color: #9b59b6;
+  background-image: linear-gradient(0deg, #8e44ad 50%, #9b59b6 50%);
+  -webkit-animation: loading 1.5s;
+  animation: loading 1.5s;
+}
+
+.upload .upload-status .file:hover .file-status .status-field .status-line {
+  background-image: linear-gradient(0deg, #d35400 50%, #e67e22 50%);
+}
+
+.upload .upload-status form {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  display: block;
+}
+
+.upload .upload-status form input[type=text] {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  height: 40px;
+  border: 0;
+  outline: 0;
+  padding: 10px 10px;
+  padding-right: 0px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.upload .upload-status form input[type=text]:focus,
+.upload .upload-status form input[type=text]:active {
+  border: 1px solid #9b59b6;
+  outline: 0;
+}
+
+.upload .upload-status form input[type=button] {
+  background-color: #9b59b6;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+  position: absolute;
+  margin-top: 2px;
+  height: 36px;
+  width: 80px;
+  top: 0;
+  right: 0;
+  transition: transform 0.15s ease-in-out, box-shadow 0.35s linear, height 0s linear, margin-top 0s linear, width 0s linear;
+  transform: translateX(25px);
+  box-shadow: 0px 5px 15px rgba(142, 68, 173, 0.8);
+}
+
+.upload .upload-status form input[type=button]:active,
+.upload .upload-status form input[type=button]:focus {
+  border: 0;
+  outline: 0;
+}
+
+.upload .upload-status form input[type=button].focus-out {
+  transform: translateX(0px);
+  box-shadow: 0px 5px 15px transparent;
+}
+
+.upload .upload-status form input[type=button]:hover {
+  height: 40px;
+  margin-top: 0px;
+  width: 80px;
+}
+
+
+[type="file"] {
+  cursor: pointer;
+}

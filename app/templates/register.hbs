@@ -1,0 +1,28 @@
+<GeneralContainer>
+    <div class="register">
+        <h1>Register</h1>
+        <form {{action "register" on="submit"}}>
+        <div class="form-group">
+            <label for="fname">FName</label>
+            <input type="text" id="fname" name="fname" class="form-control" placeholder="FName"  />
+        </div>
+                <div class="form-group">
+            <label for="fname">LName</label>
+            <input type="text" id="lname" name="lname" class="form-control" placeholder="LName"  />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email"  />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"  />
+        </div>
+        {{!-- <div class="form-group">
+            <label for="passwordConfirmation">Password Confirmation</label>
+            <input type="password" id="passwordConfirmation" name="passwordConfirmation" class="form-control" placeholder="Password Confirmation"  />
+        </div> --}}
+        <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</GeneralContainer>

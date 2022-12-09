@@ -1,0 +1,122 @@
+<div class="itemtop">
+    <NavBar @item={{true}} />
+    <div class="masthead default subnav full dark  ">
+        <div class="masthead__wrapper">
+            <div class="masthead__background__wrapper">
+                <figure class="img__wrapper masthead__background carousel-inner">
+                    {{!-- <img class="built__background built__background--multi  use-vars"
+                        src={{@character.fullimage}} /> --}}
+                    <div class="built__background built__background--multi  use-vars"
+                        style="background-image: url({{@movie.fullimage}}); --imageLg1x:url({{@movie.fullimage}}); --imageSm1x:url({{@movie.fullimage}});">
+                    </div>
+                </figure>
+            </div>
+            <div class="masthead__hero">
+                <div class="masthead__main">
+                    <div class="masthead__container masthead__container_playing-false ">
+                        <h1><span class="">
+                                <img src="{{@movie.logo}}" alt="" class="img__blur" mvl-src="{{@movie.titlePNG}}"
+                                    mvl-srcset="{{@movie.titlePNG}}">
+                            </span></h1>
+                        <div class="masthead__copy mt-3">{{@movie.tagline}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="featured imageDivider  light ">
+        <div class="featured__background__wrapper">
+            <div class="imageBackground__container">
+                <figure class="img__wrapper ">
+                    <div class="built__background built__background--multi featured__background use-vars"
+                        style="background-image: url(&quot;https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackbackground_lob_fea_div_mob_1680x680_01.jpg&quot;); --imageLg1x:url(https\:\/\/terrigen-cdn-dev\.marvel\.com\/content\/prod\/1x\/blackbackground_lob_fea_div_dsk_3840x840_01\.jpg); --imageSm1x:url(https\:\/\/terrigen-cdn-dev\.marvel\.com\/content\/prod\/1x\/blackbackground_lob_fea_div_mob_1680x680_01\.jpg);">
+                    </div>
+                </figure>
+            </div>
+            <div class="imageDivider__container">
+                {{#if @movie.logo}}
+                <figure class="img__wrapper imageDivider__logo">
+                    <img src="{{@movie.logo}}" srcset="{{@movie.logo}}" alt="{{@movie.title}}">
+                </figure>
+                {{/if}}
+            </div>
+        </div>
+        <div class="grid-wrapper">
+            <div class="grid-col-12 grid-full-1-col-padding">
+                <div class="featured__main false">
+                    <div class="featured__asset">
+                        <figure class="img__wrapper "><img src="{{@movie.image}}" srcset="{{@movie.image}}"
+                                alt="Marvel Studios' Doctor Strange in the Multi-Verse of Madness Movie Poster">
+                        </figure>
+                    </div>
+                    <div class="featured__container">
+                        <div class="featured__eyebrow">Overview</div>
+                        <div class="featured__copy">{{@movie.description}}</div>
+                        <div class="featured__image-divider-container">
+                            <div class="featured__data--asset">
+                                <div class="featured__data__container">
+                                    <div class="featured__data__label">Director</div>
+                                    <div class="featured__data__copy">{{@movie.director}}</div>
+                                </div>
+                                <div class="featured__data__container">
+                                    <div class="featured__data__label">Cast</div>
+                                    <div class="featured__data__copy">
+                                        {{#each @movie.cast as |cast|}}
+                                        {{cast.name}},
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                {{#if @movie.releaseDate}}
+                                <div class="featured__data__container">
+                                    <div class="featured__data__label">Release Date</div>
+                                    <div class="featured__data__copy">{{@movie.release_date}}</div>
+                                </div>
+                                {{/if}}
+                            </div>
+                            <div class="featured__ctas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="masonry--root" style="max-width:1240px;padding:0px 30px 20px 30px;margin:0 auto">
+        <div class="inlineModuleHeader ">
+            <div class="inlineModuleHeader__titleWrapper">
+                <h2 class="inlineModuleHeader__header">Gallery</h2>
+            </div>
+        </div>
+        <div style="margin:0 auto">
+            <div class="masonry-grid__wrapper">
+                <div id="gallary"
+                    style="display: grid; column-gap: 12px; grid-template-columns: 286px 286px 286px 286px;">
+                </div>
+                {{this.gallary @movie}}
+            </div>
+        </div>
+    </div>
+    {{#if @movie.videos}}
+    <div class="mt-5 masonry--root" style="max-width:1240px;padding:0px 30px 20px 30px;margin:0 auto">
+        <div class="inlineModuleHeader ">
+            <div class="inlineModuleHeader__titleWrapper">
+                <h2 class="inlineModuleHeader__header">Trailer</h2>
+            </div>
+        </div>
+            <Trailer @videos={{@movie.videos}} @movie={{@movie}}/>
+        </div>
+    {{/if}}
+    <div class="mt-5 masonry--root" style="max-width:1240px;padding:0px 30px 20px 30px;margin:0 auto">
+        <div class="inlineModuleHeader ">
+            <div class="inlineModuleHeader__titleWrapper">
+                <h2 class="inlineModuleHeader__header">Characters</h2>
+            </div>
+        </div>
+        <div class="content-grid content-grid--light">
+         <div class="grid-base grid__6 ">
+            {{#each @movie.cast as |item|}} 
+            <Card @src={{item.image}} @name={{item.name}} @id={{item.id}} @alias={{item.character}} @link={{false}}/>
+            {{/each}}
+        </div>
+        </div>
+</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="header1 {{if @item "header-item" ""}}" >
+    <div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="header_logo">
+						<LinkTo @route="index"><span>MARVEL</span> Character</LinkTo>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<nav class="header_menu">
+						<ul>
+							<li>
+                                <LinkTo @route="index">Home</LinkTo>
+                            </li>
+							<li><LinkTo @route="characters">Characters</LinkTo></li>
+							<li><LinkTo @route="movies">Movies</LinkTo></li>
+							<li><LinkTo @route="TvShow">Tv</LinkTo></li>
+							<li><LinkTo @route="comics">Comics</LinkTo></li>
+							<li><LinkTo @route="Register">Register</LinkTo></li>
+							<li>
+                                <LinkTo @route="upload">
+                                     UpLoad
+                                </LinkTo>
+                            </li>
+							
+						</ul>
+					</nav>
+				</div>
+					<div class="col-lg-3">
+						<div class="header_menu">
+							<ul>
+								{{#if this.index.islogged}}
+							<li><button type="button" {{on "click" this.handleLogout}}>Logout</button></li>
+								{{/if}}
+                            </ul>
+						</div>
+				</div>
+			</div>
+		</div>
+</div>

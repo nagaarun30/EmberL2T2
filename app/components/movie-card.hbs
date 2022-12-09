@@ -1,0 +1,19 @@
+<div class="mvl-card mvl-card--lob">
+    <LinkTo @route={{if @tv "TvItem" "MovieItem" }} @model={{@item.id}} class="lob__link lob--default">
+        <div class="card-content-frame" {{on "mouseenter" (fn this.changebg @item @tv @home)}}>
+            <div class="card-thumb-frame">
+                <figure class="img__wrapper" style="height: 300px;">
+                    <img mvl-type="lob" src={{@item.image}} class="card-thumb-frame__thumbnail img__blur" {{!--
+                        srcset={{@item.image}} alt="" mvl-src={{@item.image}} mvl-srcset={{@item.image}}> --}}
+                    >
+                </figure>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="card-body__headline" style="">{{@item.title}}</p>
+            <div class="card-footer">
+                <p class="card-footer__secondary-text">{{@item.Relesedate}}</p>
+            </div>
+        </div>
+    </LinkTo>
+</div>

@@ -1,0 +1,14 @@
+<div>
+<form>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email"  />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password"  />
+    </div>
+</form>
+
+<button class="btn btn-primary mt-2" type="button" {{on "click" (fn this.handle @handleLogin)}}>Login</button>
+</div>

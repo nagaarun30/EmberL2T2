@@ -1,0 +1,104 @@
+<GeneralContainer>
+    {{#if this.index.isLoaded}}
+    <div class="content-grid content-grid--light">
+        <div class="content-grid-top">
+            <div class="inlineModuleHeader ">
+                <div class="inlineModuleHeader__titleWrapper">
+                    <h2 class="inlineModuleHeader__header">Marvel Movies</h2>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav"></div>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav">
+                        <div class="sorting">
+                            <div class="sorting__dropdown">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false" {{on "click" this.toggleSort}}>
+                                        Sort By
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <LinkTo class="dropdown-item" @route="movies" @query={{hash sort="asc" }}>
+                                            Ascending</LinkTo>
+                                        <LinkTo class="dropdown-item" @route="movies" @query={{hash sort="desc" }}>
+                                            Descending</LinkTo>
+                                        <LinkTo class="dropdown-item" @route="movies" @query={{hash sort="release" }}>
+                                            Release Date</LinkTo>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-base grid__6 ">
+            {{!-- {{this.index.Movies}} --}}
+            {{#each this.filteredMoviesfn as |item|}}
+            <MovieCard @item={{item}} />
+            {{/each}}
+        </div>
+    </div>
+    {{else}}
+        <div class="content-grid content-grid--light">
+        <div class="content-grid-top">
+            <div class="inlineModuleHeader ">
+                <div class="inlineModuleHeader__titleWrapper">
+                    <h2 class="inlineModuleHeader__header">Marvel Movies</h2>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav"></div>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav">
+                        <div class="sorting">
+                            <div class="sorting__dropdown">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false" {{on "click" this.toggleSort}}>
+                                        Sort By
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <LinkTo class="dropdown-item" @route="movies" @query={{hash sort="asc" }}>
+                                            Ascending</LinkTo>
+                                        <LinkTo class="dropdown-item" @route="movies" @query={{hash sort="desc" }}>
+                                            Descending</LinkTo>
+                                        <LinkTo class="dropdown-item" @route="movies" @query={{hash sort="release" }}>
+                                            Release Date</LinkTo>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-base grid__6 ">
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+        </div>
+    </div>
+{{/if}}
+
+</GeneralContainer>
+
+{{!-- --}}

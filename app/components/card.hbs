@@ -1,0 +1,35 @@
+{{#if @link}}
+<LinkTo @route="item" @model={{@id}}>
+<div class="container">
+    <div class="mvl-card mvl-card--explore">
+        <div class="card-thumb-frame">
+            <figure class="img__wrapper">
+                <img src="{{@src}}" alt="" class="card-thumb-frame img__blur">
+            </figure>
+        </div>
+        <div class="card-body is-sliding">
+            <p class="card-body__headline">{{@name}}</p>
+            <div class="card-footer">
+                <p class="card-footer__secondary-text">{{@alias}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</LinkTo>
+{{else}}
+<div class="container">
+    <div class="mvl-card mvl-card--explore" style="cursor: pointer;">
+        <div class="card-thumb-frame">
+            <figure class="img__wrapper">
+                <img src="{{@src}}" alt="" class="card-thumb-frame img__blur">
+            </figure>
+        </div>
+        <div class="card-body is-sliding">
+            <p class="card-body__headline">{{@name}}</p>
+            <div class="card-footer">
+                <p class="card-footer__secondary-text">{{@alias}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

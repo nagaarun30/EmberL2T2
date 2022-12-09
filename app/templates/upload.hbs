@@ -1,0 +1,31 @@
+<GeneralContainer>
+            <div class="content-grid-top mt-5 mb-5 ">
+                    <h2 class="inlineModuleHeader__header">Upload A Character </h2>
+        </div>
+    <form>
+        <div class="upload">
+            <div class="upload-field">
+                <input type="file" placeholder="Drag" id="image" class="icon-field {{if this.index.isImgShowing "
+                    hide" "show" }}" accept="image/*" {{ on "change" this.displayimagesideact }} />
+                <img src="" alt="" id="output" width="100px" height="100px"
+                    class="icon-field {{if this.index.isImgShowing " show" "hide" }}">
+
+            </div>
+            <div class="upload-status">
+                <div class="file">
+                    <label>Name:</label>
+                    <form>
+                        <input type="text" id="name" />
+                    </form>
+                    <label>Alias</label>
+                    <form>
+                        <input type="text" id="alias" />
+                    </form>
+                    <button class="btn btn-primary" type="button" {{on "click" this.addImage}}>Upload</button>
+                </div>
+            </div>
+        </div>
+    </form>
+        <div class="content-grid-top mt-5 mb-5 ">
+                    <h2 class="inlineModuleHeader__header" id="status">Status: </h2>
+        </div></GeneralContainer>

@@ -1,0 +1,97 @@
+{{page-title "Item"}}
+{{#if this.index.isItemLoaded}}
+<ItemTop @character={{this.model.characterDetails}} />
+{{!-- <GeneralContainer @item={{true}}>
+    <button class="btn btn-primary" type="button" {{on "click" this.toggleshow}}>Show</button>
+    <h1 class="{{ if this.isShowing " show" "hide" }}">
+        Welcome To Zoho Corporation {{this.model.characterDetails.name}}
+    </h1>
+
+    <div class="content-grid content-grid--light">
+        <div class="content-grid-top mt-5 mb-5">
+            <h2 class="inlineModuleHeader__header">Character Skill</h2>
+        </div>
+    </div>
+</GeneralContainer> --}}
+
+{{#if this.model.character.story}}
+
+<section id="sets-3"
+    class="page__component page__component--character-on-screen-profile page__component--sets section__color__ "
+    data-top-component="sets" data-page-position="3">
+    <div class="sets story half ">
+        <div class="sets__hero">
+            <div class="sets__bg__container">
+                <figure class="img__wrapper sets__background__wrapper">
+                    <div mvl-src="{{this.model.character.story.0.image}}"
+                        class="built__background storyimage built__background--single sets__background use-vars"
+                        id="storyimage"
+                        style="background-image: url({{this.model.character.story.0.image}}); --imageLg1x:url({{this.model.character.story.0.image}});">
+                    </div>
+                </figure>
+            </div>
+
+            <div class="sets__main">
+                {{#each this.model.character.story as |story|}}
+                <div class="sets__container {{if story.isPrimary "" " nextSet"}}" id={{story.id}} aria-live="polite"
+                    role="region">
+                    <div class="sets__story">
+                        <div class="sets__story__current">0{{story.id}}</div>
+                        <div class="sets__story__count">0{{this.model.character.story.length}}</div>
+                        <div class="sets__story__title">Story Moments</div>
+                    </div>
+                    <div class="sets__title">{{story.Title}}</div>
+                    <div class="sets__description">{{story.Desc}}</div>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+        <div class="tabs__div">
+            <div class="tabs__component ">
+                <ul class="tabs__container">
+                    {{#each this.model.character.story as |story|}}
+                    <li class="tabs__btns {{if story.isPrimary " active" "" }}"><a role="button" tabindex="{{story.id}}"
+                            aria-label="{{story.Title}}" {{on "click" this.setActive}}>{{story.Title}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<Related @items={{this.model.character.RelatedMoviesdetails}}/>
+
+<section id="featured-7" style="width: 100%; height: 25%;"
+    class="page__component page__component--character-on-screen-profile page__component--featured section__color__light "
+    data-top-component="featured" data-page-position="8">
+    <div class="featured background  dark ">
+        <div class="featured__background__wrapper">
+            <div class="imageBackground__container">
+                <figure class="img__wrapper ">
+                    <div class="built__background built__background--multi featured__background use-vars"
+                        style="background-image: url(&quot;{{this.model.character.Quotes.0.image}}&quot;); --imageLg1x:url({{this.model.character.Quotes.0.image}}); --imageSm1x:url({{this.model.character.Quotes.0.image}});">
+                    </div>
+                </figure>
+            </div>
+        </div>
+        <div class="grid-wrapper">
+            <div class="grid-col-12 grid-full-1-col-padding">
+                <div class="featured__main noAsset">
+                    <div class="featured__container">
+                        <div class="featured__copy">“{{this.model.character.Quotes.0.Quote}}”</div>
+                    </div>
+                    <div class="featured__data"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/if}}
+{{outlet}}
+{{else}}
+<div class="loading">
+    {{this.index.isLoaded}}
+    <h1>LOADING...</h1>
+</div>
+{{/if}}

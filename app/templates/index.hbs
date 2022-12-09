@@ -1,0 +1,197 @@
+{{page-title "Index"}}
+<GeneralContainer>
+{{#if this.index.isLoaded}}
+<div class="content-grid content-grid--light" 
+    style="transition: all 0.5s ease 0s;">
+        <div class="inlineModuleHeader ">
+            <div class="inlineModuleHeader__titleWrapper">
+                <h2 class="inlineModuleHeader__header">Featured Movies</h2>
+            </div>
+            <div class="inlineModuleHeader__innerComponent">
+                <div class="content-grid-top__nav"></div>
+            </div>
+            <div class="inlineModuleHeader__innerComponent">
+                <div class="content-grid-top__nav">
+                    <div class="sorting">
+                        <div class="sorting__dropdown">
+                            <div class="dropdown">
+                                <LinkTo @route="movies" class="btn btn-secondary" type="button">
+                                    More
+                                </LinkTo>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="{{this.index.FMovies.0.fullimage}}" id="imagech" alt="bg" width="100%" style="border-radius: 25px;">
+        {{this.changebg}}
+        <div class="mt-2 grid-base grid__6 ">
+            {{#each this.index.FMovies as |item|}}
+            <MovieCard @item={{item}} @home={{true}} />
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="mt-5  content-grid content-grid--light">
+        <div class="content-grid-top">
+            <div class="inlineModuleHeader ">
+                <div class="inlineModuleHeader__titleWrapper">
+                    <h2 class="inlineModuleHeader__header">Featured Character</h2>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav"></div>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav">
+                        <div class="sorting">
+                            <div class="sorting__dropdown">
+                                <div class="dropdown">
+                                    <LinkTo @route="characters" class="btn btn-secondary" type="button">
+                                        More
+                                    </LinkTo>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-base grid__4 ">
+            {{#each this.index.featured as |item| }}
+            <Card @src={{item.image}} @name={{item.name}} @id={{item.cid}} @alias={{item.alias}} @link={{true}} />
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="mt-5 bg content-grid content-grid--dark" id="bg"
+        style="background-image: url('{{this.index.FTv.0.fullimage}}');">
+        <div class="content-grid-top">
+            <div class="inlineModuleHeader ">
+                <div class="inlineModuleHeader__titleWrapper">
+                    <h2 class="inlineModuleHeader__header">Featured TvShows</h2>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav"></div>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav">
+                        <div class="sorting">
+                            <div class="sorting__dropdown">
+                                <div class="dropdown">
+                                    <LinkTo @route="TvShow" class="btn btn-secondary" type="button">
+                                        More
+                                    </LinkTo>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-base grid__6 ">
+            {{#each this.index.FTv as |item|}}
+            <MovieCard @item={{item}} @tv={{ if item.type true }} @home={{true}}/>
+            {{/each}}
+        </div>
+    </div>
+{{else}}
+<div class="content-grid content-grid--light" 
+    style="transition: all 0.5s ease 0s;">
+        <div class="inlineModuleHeader ">
+            <div class="inlineModuleHeader__titleWrapper">
+                <h2 class="inlineModuleHeader__header">Featured Movies</h2>
+            </div>
+            <div class="inlineModuleHeader__innerComponent">
+                <div class="content-grid-top__nav"></div>
+            </div>
+            <div class="inlineModuleHeader__innerComponent">
+                <div class="content-grid-top__nav">
+                    <div class="sorting">
+                        <div class="sorting__dropdown">
+                            <div class="dropdown">
+                                <LinkTo @route="movies" class="btn btn-secondary" type="button">
+                                    More
+                                </LinkTo>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="" style="width: 1200px;height: 675px;border-radius: 25px; animation: loading 2s infinite;"></div>        <div class="mt-2 grid-base grid__6 ">
+            
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+        </div>
+    </div>
+    <div class="mt-5  content-grid content-grid--light">
+        <div class="content-grid-top">
+            <div class="inlineModuleHeader ">
+                <div class="inlineModuleHeader__titleWrapper">
+                    <h2 class="inlineModuleHeader__header">Featured Character</h2>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav"></div>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav">
+                        <div class="sorting">
+                            <div class="sorting__dropdown">
+                                <div class="dropdown">
+                                    <LinkTo @route="movies" class="btn btn-secondary" type="button">
+                                        More
+                                    </LinkTo>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-base grid__4 ">
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+        </div>
+    </div>
+    <div class="mt-5 bg content-grid content-grid--light">
+        <div class="content-grid-top">
+            <div class="inlineModuleHeader ">
+                <div class="inlineModuleHeader__titleWrapper">
+                    <h2 class="inlineModuleHeader__header">Featured TvShows</h2>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav"></div>
+                </div>
+                <div class="inlineModuleHeader__innerComponent">
+                    <div class="content-grid-top__nav">
+                        <div class="sorting">
+                            <div class="sorting__dropdown">
+                                <div class="dropdown">
+                                    <LinkTo @route="TvShow" class="btn btn-secondary" type="button">
+                                        More
+                                    </LinkTo>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-base grid__6 ">
+           <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+            <LoadingMovieCard />
+        </div>
+    </div>
+{{/if}}
+</GeneralContainer>
+{{outlet}}

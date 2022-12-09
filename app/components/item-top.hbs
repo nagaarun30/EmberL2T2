@@ -1,0 +1,21 @@
+<div class="itemtop">
+<NavBar @item={{true}}/>
+<div class="masthead default subnav full dark  ">
+    <div class="masthead__wrapper">
+        <div class="masthead__background__wrapper">
+            <figure class="img__wrapper masthead__background">
+                {{!-- <img class="built__background built__background--multi  use-vars" src={{@character.fullimage}} /> --}}
+                <div class="built__background built__background--multi  use-vars" style="background-image: url({{@character.fullimage}}); --imageLg1x:url({{@character.fullimage}}); --imageSm1x:url({{@character.fullimage}});"></div>
+            </figure>
+        </div>
+        <div class="masthead__hero">
+            <div class="masthead__main">
+                <div class="masthead__container masthead__container_playing-false ">
+                    <h1><span class="masthead__eyebrow">{{@character.alias}}</span><span class="masthead__headline">{{@character.name}}</span></h1>
+                    <div class="masthead__copy">{{@character.tagline}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

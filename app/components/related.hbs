@@ -1,0 +1,43 @@
+<section id="sets-6"
+    class="page__component page__component--character-on-screen-profile page__component--sets section__color__ "
+    data-top-component="sets" data-page-position="7">
+    <div class="sets base_sets half ">
+        <div class="sets__hero">
+            <div class="sets__bg__container">
+                <figure class="img__wrapper sets__background__wrapper">
+                    <div mvl-src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/avengersendgame_lob_rel_01_1.jpg"
+                        class="built__background related built__background--single sets__background use-vars"
+                        style="background-image: url({{this.bgimage}}); --imageLg1x:url({{this.bgimage}});">
+                    </div>
+                </figure>
+            </div>
+            <div class="sets__main">
+                <div class="sets__container " aria-live="polite" role="region">
+                    <figure class="img__wrapper "><img
+                            src="{{this.logo}}"
+                            srcset="{{this.logo}}"
+                            alt="Avengers: Endgame" class="sets__logo"></figure>
+                    <div class="sets__eyebrow">Related Movies</div>
+                    <div class="sets__title">{{this.title}}</div>
+                    <div class="sets__description">{{this.desc}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs__div"></div>
+        <div class="sets__cards__wrapper">
+            <div class="sets__slider__container">
+                <div class="slider nested    ">
+                    <div class="slider__wrapper">
+                        <ul class="slider__container  show">
+                            {{#each @items as |item|}}
+                            <div class="slider__item" style="width: 14.8169%;" {{on "mouseenter" (fn this.changebg item)}}>
+                                <MovieCard @item={{item}} />
+                            </div>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

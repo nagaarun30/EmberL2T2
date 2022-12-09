@@ -1,0 +1,48 @@
+
+<div class="{{if this.isShowing "youtube_show" "youtube_hide"}}">
+    <i class="fa fa-xmark close_btn" {{on "click" this.toggleshow}}>X</i>
+    <iframe id="youtube_video" width="1903" height="810" src=""
+        title=""
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<section class="inner_content bg_image no_pad video" id="trailer_section"
+    style="border-radius: 25px; max-width: 100%; background-image: url(https://img.youtube.com/vi/{{ @videos.0.key}}/hqdefault.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; object-fit: cover; object-position: center center; height: 100%; width: 100%;">
+    <div class="column_wrapper" style="border-radius: 25px;">
+        <div id="trailer_scroller" class="media discover scroller_wrap should_fade is_fading">
+            <div class="content_wrapper wrap no_bottom_pad">
+                <div class="column">
+                    <div class="column_content flex scroller loaded" style="height: 350px;">
+                        {{#each @videos as |video|}}
+                        <div class="card video style_2 true"
+                            data-bg-image="https://img.youtube.com/vi/{{video.key}}/hqdefault.jpg">
+                            <div class="image" {{on "click" (fn this.playtrailer video.key)}}>
+                                <div class="wrapper" style="cursor: pointer;" {{on "mouseenter" (fn this.bgchange
+                                    video.key)}}>
+                                    <img loading="lazy" class="backdrop"
+                                        style="object-fit: cover; object-position: center center;"
+                                        src="https://img.youtube.com/vi/{{video.key}}/hqdefault.jpg"
+                                        srcset="https://img.youtube.com/vi/{{video.key}}/hqdefault.jpg 2x" alt="">
+
+                                    <div class="play">
+                                        <span class="glyphicons_v2 play invert svg"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h2><a href="/movie/19995" title="{{@movie.title}}">{{@movie.title}}</a></h2>
+                                <h3>{{video.name}}</h3>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div class="card video style_2 spacer"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
